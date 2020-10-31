@@ -8,17 +8,15 @@ function textToArpa(tokens, callback) {
     host: 'localhost', user: 'root', database: 'arparef',
   });
 
-  const query = 'SELECT w.word, p.arpabet FROM '
-    + 'words w, pronunciations p WHERE '
-    + `w.word IN (${tokens.map(v => mysql.escape(v)).join()}) `
-    + 'AND w.id = p.word_id';
+  const query = 'SELECT word, arpa FROM wordarpa WHERE '
+    + `word IN (${tokens.map(v => mysql.escape(v)).join()}) `;
   
   conn.connect(err => {
     if (err) console.error(err);
     conn.query(query, (err, res) => {
       if (err) console.error(err);
       const dict = res.reduce((acc, v) => {
-        acc[v.word] = [...(acc[v.word] || []), v.arpabet];
+        acc[v.word] = [...(acc[v.word] || []), v.arpa];
         return acc;
       }, {});
       const arpas = tokens.map(
