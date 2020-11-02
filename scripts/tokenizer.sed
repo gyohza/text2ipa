@@ -57,8 +57,8 @@ s=$= =
 s=^= =
 
 #### ADAPTED FROM ORIGINAL. Disabled tokenization of contractions.
-#s="= '' =g
-## possessive or close-single-quote
+s="= '' =g
+# possessive or close-single-quote
 #s=\([^']\)' =\1 ' =g
 ## as in it's, I'm, we'd
 #s='\([sSmMdD]\) = '\1 =g
