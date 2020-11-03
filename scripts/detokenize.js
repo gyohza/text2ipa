@@ -6,7 +6,7 @@ function detokenize(tokens) {
   const regex = new RegExp(
     [
       '((?<=^|\\s)["\'([{]+)\\s', // prependices
-      '\\s([.,;?!"\')\\]}]+(?=$|\\s))', // appendices
+      '\\s([.,:;?!"\')\\]}]+(?=$|\\s))', // appendices
       '(s)s+|^s|s$',
     ].join('|'),
     'g'
