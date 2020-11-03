@@ -67,7 +67,7 @@ function arpaToIpa(arpaWords) {
         (m, onset, digit) => `${stresses[digit] || ''}${onset}`
       )
       .replace(
-        /\b([A-Z]{1,2})(\s|\b)/g,
+        /\b([A-Z]{1,2})(?:\s|\b)/g,
         (m, chars) => phonemes[chars] || `{{${arpa}}}`
       )
       .replace(/^\./g, '')
