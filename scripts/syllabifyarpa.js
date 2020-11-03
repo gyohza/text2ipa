@@ -15,7 +15,7 @@ function sillabify(arpaWords) {
     'K( [WRL])?',
     '[PFBG]( [RL])?',
     'SH( R)?',
-    `([LMQRVYZ]|CH|D[HX]|E[LMN]|HH|JH|NX?|WH?)`,
+    '([LMQRVYZ]|CH|D[HX]|E[LMN]|HH|JH|NX?|WH?)',
   ].join('|');
 
   const regex = new RegExp(`\\b(((${onsets}) )?(${vowels})[0-2]?)`, 'g');
