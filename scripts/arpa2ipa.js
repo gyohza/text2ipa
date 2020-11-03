@@ -54,7 +54,7 @@ function arpaToIpa(arpaWords) {
     ZH: 'ʒ',
   };
 
-  const stressings = {
+  const stresses = {
     0: '.',
     1: 'ˈ',
     2: 'ˌ',
@@ -64,7 +64,7 @@ function arpaToIpa(arpaWords) {
     arpa
       .replace(
         /\/([^\/\n]+)([0-2])/g,
-        (m, onset, digit) => `${stressings[digit] || ''}${onset}`
+        (m, onset, digit) => `${stresses[digit] || ''}${onset}`
       )
       .replace(
         /\b([A-Z]{1,2})(\s|\b)/g,
